@@ -123,3 +123,57 @@ Percentage of the requests served within a certain time (ms)
   99%   1261
  100%   1382 (longest request)
 ```
+
+### Rust
+
+```
+$ ab -n 500 -c 10 http://localhost:8082/?i=raw.lep
+This is ApacheBench, Version 2.3 <$Revision: 1913912 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Finished 500 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8082
+
+Document Path:          /?i=raw.lep
+Document Length:        2612717 bytes
+
+Concurrency Level:      10
+Time taken for tests:   50.308 seconds
+Complete requests:      500
+Failed requests:        0
+Total transferred:      1306412000 bytes
+HTML transferred:       1306358500 bytes
+Requests per second:    9.94 [#/sec] (mean)
+Time per request:       1006.169 [ms] (mean)
+Time per request:       100.617 [ms] (mean, across all concurrent requests)
+Transfer rate:          25359.42 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       1
+Processing:   536  992 257.8    901    2112
+Waiting:      501  940 187.6    873    1686
+Total:        536  992 257.8    901    2112
+
+Percentage of the requests served within a certain time (ms)
+  50%    901
+  66%    993
+  75%   1096
+  80%   1147
+  90%   1306
+  95%   1542
+  98%   1869
+  99%   2026
+ 100%   2112 (longest request)
+```

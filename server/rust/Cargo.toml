@@ -1,0 +1,9 @@
+[package]
+name = "rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.9.0"
+lepton_jpeg = "0.3.0"
+serde = { version = "1.0.208", features = ["derive"] }
