@@ -1,0 +1,13 @@
+services:
+ php:
+  build: server/php
+  volumes:
+   - ./image:/var/www/html/images:ro
+  ports:
+   - 8080:80
+ golang:
+  build: server/golang
+  volumes:
+   - ./image:/app/images:ro
+  ports:
+   - 8081:8080
